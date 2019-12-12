@@ -71,12 +71,12 @@ class ViewController: UIViewController {
     func isMathOperator(receivedOperator: String) -> Bool {
         return label.text != "" && receivedOperator != "C" && receivedOperator != "="
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -84,19 +84,7 @@ class ViewController: UIViewController {
     override open var shouldAutorotate: Bool {
         return false
     }
-    
+        
     @IBOutlet var buttonCollection: [roundButton]!
     
-    func accelerationToRGB(acceleration: Double) -> CGFloat {
-        var returnValue = CGFloat(abs(acceleration))
-        
-        if returnValue > 1 {
-            returnValue /= 1.09
-        } else if returnValue < 0.003 {
-            returnValue *= 100
-        }
-        return returnValue
-    }
-    
 }
-
